@@ -1,0 +1,2 @@
+﻿SDL2main.lib(SDL_windows_main.obj) : error LNK2001: неразрешенный внешний символ "SDL_main"
+D:\GitHub\pp_17\pp\x64\Release\pp.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
