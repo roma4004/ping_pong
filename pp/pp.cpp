@@ -4,7 +4,8 @@
 #include <iostream>
 
 #include "game.h"
-#include "gameObject.h"
+#include "GameObject.h"
+#include "Ball.h"
 
 
 void	clearSecreen(const game* lobby)
@@ -15,8 +16,10 @@ void	clearSecreen(const game* lobby)
 
 int main(int argc, char *argv[])
 {
-	game *lobby = new game(640, 480, "PP");
-	gameObject* player = new gameObject(lobby->render);
+	game*		lobby = new game(640, 480, "PP");
+	GameObject*	player = new GameObject(lobby->render);
+	player->size.y *= 2;
+	Ball*		ball = new Ball(lobby->render);
 
 	clearSecreen(lobby);
 	t_ivec	playerPos = { 20, 20 };
@@ -29,6 +32,7 @@ int main(int argc, char *argv[])
 	bool running = true;
 
 	while (running) {
+		clearSecreen(lobby);
 		while (SDL_PollEvent(&lobby->event)) {
 			switch (lobby->event.type)
 			{
@@ -44,18 +48,16 @@ int main(int argc, char *argv[])
 				//SDL_RenderCopy(env->renderer, env->screen, NULL, NULL);
 
 
-
-				clearSecreen(lobby);
-
-
-				player->draw();
-				SDL_RenderPresent(lobby->render);
-
 				break;
 			case SDL_QUIT:
 				running = false;
 			}
 		}
+
+		ball->move();
+		ball->draw();
+		player->draw();
+		SDL_RenderPresent(lobby->render);
 	}
 
 	return 0;

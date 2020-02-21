@@ -8,22 +8,29 @@ typedef struct		s_vector_int
 	int				y;
 }					t_ivec;
 
-class gameObject
+typedef struct		s_vector_float
 {
-	t_ivec			_moveLimitsMin = { 0, 0 };
-	t_ivec			_moveLimitsMax = { 640, 480 }; //todo: assign in constructor
-	t_ivec			_size = { 20, 40 };
+	float			x;
+	float			y;
+}					t_fvec;
+
+class GameObject
+{
+
 	SDL_Color		_color = { 0, 0, 0, 0 };
-	unsigned		_speed = 10;
-	SDL_Renderer*	_render;
+	float			_speed = 10;
 
-	SDL_Rect		_selfRect;
 public:
+	SDL_Rect		selfRect;
+	SDL_Renderer*	render;
+	t_fvec			moveLimitsMin = { 0, 0 };
+	t_fvec			moveLimitsMax = { 640, 480 }; //todo: assign in constructor
 
-	t_ivec			pos = { 10, 10 };//todo: get set
+	t_fvec			size = { 20, 40 };
+	t_fvec			pos = { 10, 10 };//todo: get set
 
-	gameObject(SDL_Renderer* render)
-		: _render(render)
+	GameObject(SDL_Renderer* render)
+		: render(render)
 	{
 
 	};
@@ -34,24 +41,29 @@ public:
 	bool			move(char dirrection)
 	{
 		if (dirrection == 'w'
-		&& _moveLimitsMin.y < pos.y           - _speed) { pos.y -= _speed; return (true); }
+		&& moveLimitsMin.y < pos.y           - _speed) { pos.y -= _speed; return (true); }
 		if (dirrection == 'a'
-		&& _moveLimitsMin.x < pos.x           - _speed) { pos.x -= _speed; return (true); }
+		&& moveLimitsMin.x < pos.x           - _speed) { pos.x -= _speed; return (true); }
 		if (dirrection == 's'
-		&& _moveLimitsMax.y > pos.y + _size.y + _speed) { pos.y += _speed; return (true); }
+		&& moveLimitsMax.y > pos.y + size.y + _speed) { pos.y += _speed; return (true); }
 		if (dirrection == 'd'
-		&& _moveLimitsMax.x > pos.x + _size.x + _speed) { pos.x += _speed; return (true); }
+		&& moveLimitsMax.x > pos.x + size.x + _speed) { pos.x += _speed; return (true); }
 		return (false);
 
 	}
 
 	void			draw() {
-		_selfRect = { pos.x, pos.y, _size.x, _size.y };
+		selfRect = {
+			(int)(pos.x),
+			(int)(pos.y),
+			(int)(size.x),
+			(int)(size.y)
+		};
 
-		SDL_SetRenderDrawColor(_render, 0x00, 0xFF, 0x00, 0xFF);
-		SDL_RenderFillRect(_render, &_selfRect);
+		SDL_SetRenderDrawColor(render, 0x00, 0xFF, 0x00, 0xFF);
+		SDL_RenderFillRect(render, &selfRect);
 
-		SDL_RenderDrawRect(_render, &_selfRect);
+		SDL_RenderDrawRect(render, &selfRect);
 	}
 };
 

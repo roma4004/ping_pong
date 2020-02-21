@@ -1,18 +1,5 @@
-﻿  gameObject.cpp
-d:\github\pp_17\pp\pp\gameobject.h(37): warning C4018: <: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(39): warning C4018: <: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(41): warning C4018: >: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(43): warning C4018: >: несоответствие типов со знаком и без знака
-  player.cpp
-d:\github\pp_17\pp\pp\gameobject.h(37): warning C4018: <: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(39): warning C4018: <: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(41): warning C4018: >: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(43): warning C4018: >: несоответствие типов со знаком и без знака
-  pp.cpp
-d:\github\pp_17\pp\pp\gameobject.h(37): warning C4018: <: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(39): warning C4018: <: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(41): warning C4018: >: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\gameobject.h(43): warning C4018: >: несоответствие типов со знаком и без знака
-d:\github\pp_17\pp\pp\pp.cpp(23): warning C4101: rect1: неиспользованная локальная переменная
-  Создание кода...
-  pp.vcxproj -> D:\GitHub\pp_17\pp\x64\Debug\pp.exe
+﻿  pp.cpp
+d:\github\pp\pp\ball.h(7): warning C4305: инициализация: усечение из "double" в "float"
+d:\github\pp\pp\ball.h(8): warning C4305: инициализация: усечение из "double" в "float"
+d:\github\pp\pp\pp.cpp(26): warning C4101: rect1: неиспользованная локальная переменная
+  pp.vcxproj -> D:\GitHub\pp\x64\Debug\pp.exe
