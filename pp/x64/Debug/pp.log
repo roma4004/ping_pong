@@ -1,5 +1,4 @@
-﻿  pp.cpp
-d:\github\pp\pp\ball.h(7): warning C4305: инициализация: усечение из "double" в "float"
-d:\github\pp\pp\ball.h(8): warning C4305: инициализация: усечение из "double" в "float"
-d:\github\pp\pp\pp.cpp(26): warning C4101: rect1: неиспользованная локальная переменная
+﻿  Player.cpp
+  pp.cpp
+  Создание кода...
   pp.vcxproj -> D:\GitHub\pp\x64\Debug\pp.exe
