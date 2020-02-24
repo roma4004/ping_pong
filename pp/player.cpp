@@ -38,4 +38,3 @@ bool			Player::move(char dirrection)
 	}
 	return (false);
 }
-

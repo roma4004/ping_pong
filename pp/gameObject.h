@@ -28,4 +28,3 @@ public:
 
 	virtual void	draw() const;
 };
-

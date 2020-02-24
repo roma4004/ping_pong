@@ -36,4 +36,3 @@ class Game
 	// move assignment
 	Game&			operator=(Game&& other) noexcept;
 };
-
